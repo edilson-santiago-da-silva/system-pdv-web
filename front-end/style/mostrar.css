@@ -1,0 +1,111 @@
+#mostrar-item{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  background-color: #fff;
+  height: 394px;
+  border-radius: 4px;
+  padding: 6px;
+  overflow-y: auto;
+}
+
+#mostrar li{
+  cursor: pointer;
+  border-top: 1px solid rgba(0, 0, 0, 0.089);
+  padding: 10px 4px;
+  border-radius: 4px;
+}
+
+#mostrar li:hover{
+  background-color: rgba(0, 0, 0, 0.027);
+}
+
+.mostrar-cabecalho{
+  display: flex;
+  justify-content: space-between;
+  gap: 0px;
+  font-weight: bold;
+  padding: 8px;
+  border-bottom: 1px solid black;
+}
+
+.index-excluir{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.vendasSalvas{
+  width: 95%;
+  position: absolute;
+  top: 25%;
+  display: none;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: #7c7c7c;
+}
+
+.cabecalho-vendas-salvas {
+  color: #fff;
+  display: grid;
+  grid-template-columns: 60px 1fr 110px 110px 110px;
+
+  padding: 10px ;
+  border-radius: 10px 10px 0 0 ;
+}
+
+
+.mostrar-vendas-salvas{
+  background-color: #fff; 
+  height: 400px;
+  overflow: auto;
+  border-radius: 0 0 10px 10px;
+}
+
+.mostrar-vendas-salvas li{
+  display: grid;
+  grid-template-columns: 60px 1fr 110px 110px 110px;
+
+}
+
+
+  .mostrar-vendas-salvas li textarea{
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 1px 6px;
+    overflow: hidden;
+    resize: vertical;
+    min-height: 70px;
+    line-height: 20px;
+    color: gray;
+  }
+  .mostrar-vendas-salvas li textarea[contenteditable]:empty::before {
+    content: "Placeholder still possible";
+    color: gray;
+  }
+
+  .fecharVendasSalvas{
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    color: red;
+    border-radius: 10px;
+    border-color: transparent;
+  }
+  
+  #mostrarVenda li{
+    display: grid;
+    grid-template-columns: 60px 1fr 110px 110px 110px;
+  }
+
+  #buscadorVenda{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 75%;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: none;
+    background-color: #7c7c7c;
+  }
