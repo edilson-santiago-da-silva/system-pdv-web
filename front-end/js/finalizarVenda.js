@@ -1,5 +1,9 @@
 // finalizar() = quando essa função for chamada, ela somará quais valores estão dentro da array.
 function finalizar(){
+    finalizadorFocado.forEach((item)=>{
+        item.value = '';
+    })
+
     // Se a array precoAtualizado não estiver vazia, somaSorvetesAtacado receberá a soma de todos os numeros que estiverem dentro dela.
     // Após isso chamamos a função que irá ativar o modal.
     if(precoAtualizado.length != ''){
@@ -33,7 +37,7 @@ function finalizar(){
   
     // Para cada item do loop deixamos um escutador para acionar uma função anônima.
     item.addEventListener('focus', ()=>{
-    
+      
   
         // somaSorvetesVarejo = recebe o valor da função somaTotalProdutos que fará a soma da array precoAtualizado.
         // somaSorvetesAtacado = recebe o valor da função somaTotalProdutos que fará a soma da array precoAtualizadoAtacado.
@@ -61,7 +65,7 @@ function finalizar(){
         // valorAPagar = utilizamos para que saibamos quanto da compra ainda falta a ser pago.
         let valorAPagar = somaSorvetesVarejo - (+valoresPagamento.dinheiro + +valoresPagamento.debito + +valoresPagamento.credito);
         if(somaSorvetesVarejo === valorAPagar){
-            item.value = somaSorvetesVarejo;
+            item.value = somaSorvetesVarejo.toFixed(2)
         }   
       //   else{
       //       item.value = valorAPagar;
@@ -137,6 +141,8 @@ function finalizar(){
     }
     somaTotalProdutos(precoAtualizado);
     somaTotalProdutos(precoAtualizadoAtacado);   
+
+
   btnConfirmar.addEventListener('click', ()=>{
     let valorFinalizador = +valoresPagamento.dinheiro + +valoresPagamento.debito + +valoresPagamento.credito;
   
