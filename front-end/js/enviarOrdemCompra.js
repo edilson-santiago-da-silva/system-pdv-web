@@ -22,4 +22,10 @@ function postOrderSale( product, total, payment){
 
   .then((response) => response.json())
   .then((data) => console.log(data))
+
+  valoresPagamento = {
+    dinheiro: +'',
+    debito: +'',
+    credito: +''
+  }
 }
