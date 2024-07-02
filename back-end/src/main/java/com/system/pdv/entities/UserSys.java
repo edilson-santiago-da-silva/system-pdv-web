@@ -6,11 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 import com.system.pdv.user.UserRole;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,6 +21,8 @@ public class UserSys implements Serializable, UserDetails {
 	private Integer id;
 	private String email;
 	private String password_sys;
+
+//	@Column(nullable = true, columnDefinition = "TEXT", length = 100)
 	private UserRole role;
 	
 	public UserSys() {
