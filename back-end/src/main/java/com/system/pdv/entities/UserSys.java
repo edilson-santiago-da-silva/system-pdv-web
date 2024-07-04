@@ -28,10 +28,11 @@ public class UserSys implements Serializable, UserDetails {
 	public UserSys() {
 	}
 
-	public UserSys(Integer id, String email, String password_sys) {
+	public UserSys(Integer id, String email, String password_sys, UserRole role ) {
 		this.id = id;
 		this.email= email;
 		this.password_sys = password_sys;
+		this.role = role;
 	}
 
 	public Integer getId() {
