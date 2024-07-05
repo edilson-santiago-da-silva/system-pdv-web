@@ -1,8 +1,10 @@
 package com.system.pdv.resources;
 
+import com.system.pdv.config.security.TokenService;
 import com.system.pdv.entities.UserSys;
 import com.system.pdv.repositores.UserSysRepository;
 import com.system.pdv.user.Authentication;
+import com.system.pdv.user.LoginResponse;
 import com.system.pdv.user.Register;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,13 +26,17 @@ public class AuthenticationResource {
 
     @Autowired
     private UserSysRepository repository;
+    @Autowired
+    private TokenService tokenService;
 
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody @Valid Authentication data){
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.email(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
-        return  ResponseEntity.ok().build();
+        var token = tokenService.generateToken((UserSys) auth.getPrincipal());
+
+        return  ResponseEntity.ok(new LoginResponse(token));
     }
 
     @PostMapping("/register")
