@@ -6,6 +6,7 @@ import com.system.pdv.repositores.UserSysRepository;
 import com.system.pdv.user.Authentication;
 import com.system.pdv.user.LoginResponse;
 import com.system.pdv.user.Register;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/auth")
+@Tag(name = "authentication")
 public class AuthenticationResource {
 
     @Autowired
