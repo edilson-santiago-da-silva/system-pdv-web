@@ -10,7 +10,7 @@ A persistência dos dados das compras, assim como a coleta de informações dos 
 ## Layout web
 ![Web 1](https://github.com/edilson-santiago-da-silva/system-pdv-web/blob/main/docs/tela-web.png)
 
-## Modelo conceitual
+## Modelo de domínio
 ![Modelo Conceitual](https://github.com/edilson-santiago-da-silva/system-pdv-web/blob/main/docs/UML.png)
 
 ## Swagger
